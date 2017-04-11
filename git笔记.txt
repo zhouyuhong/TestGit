@@ -114,3 +114,6 @@ git push origin --delete branchname
 所以我们此时就可以输入
 git push origin --delete dev
 来删除远程分支
+
+
+然后此时我们切换到master，同样对txt文件进行修改，并add和commit
