@@ -88,3 +88,29 @@ git push origin master来简化了。
 
 接下来介绍一下分支
 我们往往会有这种需求，我们此时在开发，如果都是只针对master主分支进行修改，那么每次提交后，必然会影响master的代码，如果此时线上有一个问题需要修复，此时master已经有我们新写的代码了，显然此时如果对master直接修复，会导致我们没有开发完成的代码也会一并发布出去，显然是不科学的，所以此时我们就可以创建一个分支。新的需求就在分支上修改，当我们开发完成之后，再合并到master上即可。
+首先我们创建一个分支
+git checkout -b dev
+-b表示创建分支，checkout表示切换分支
+所以此时本地HEAD指针就指向了dev这个分支
+我们查看一下
+git branch
+发现dev分支前面有*号，表示当前是在dev上开发
+此时我们修改test.txt文件，然后add并commit
+做完上述的操作后，我们再次切换到master
+git checkout master
+此时打开test.txt文件，发现我们前面添加的内容不见了，这就证明了我们前面是在dev分支上做的提交
+此时我们可以直接将dev推送到远程仓库
+git push origin dev
+这时远程仓库就有master和dev两个仓库了
+但是我们master还没有改变，此时我们就可以用合并命令，将dev的内容合并到master
+git merge dev
+此时dev修改的内容就合并到了master的txt文件中，然后我们就可以删除本地的分支了
+git branch -d dev
+删完后，查看git branch
+的确只剩下master主分支
+然后提交，此时远程仓库的master就更新了
+但是此时我们会发现，远程的dev还没有删除，怎么办呢？我们可以运行如下的命令删除远程的分支
+git push origin --delete branchname
+所以我们此时就可以输入
+git push origin --delete dev
+来删除远程分支
