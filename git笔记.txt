@@ -9,7 +9,7 @@ git用法：
 首先创建一个空文件夹，然后运行
 git init
 
-此时在这个文件夹下面会有一个隐藏文件夹.git，此时就说明这个文件下下的所有内容都被git所管理。
+此时在这个文件夹下面会有一个隐藏文件夹.git，此时就说明这个文件下下的所有内容都被git所管理。同时，git会默认将本地仓库命名为master
 
 
 然后新建一个文件，在内部输入一句话
@@ -77,3 +77,10 @@ git remote add 远程仓库名 url
 举个例子：
 git remote add origin xxxxxx.git
 此时就表示将本地仓库与远程的xxx仓库进行关联，并且将远程仓库命名为origin，以后就可以用Origin来代替远程仓库，而不用每次都输入后面的Url了。
+关联好之后，接下来我们就进行第一次远程推送
+git push
+由于是第一次，此时远程仓库还没有任何信息，所以我们用
+git push -u origin master来进行推送
+origin不用说，就是前面的远程仓库，而后面的master表示本地仓库，前面提到过
+-u表示git不但会把本地的master推送到远程，同时也会在远程创建master，并且与本地的master进行关联，之后的所有需要提交的代码，都可以用
+git push origin master来简化了。
