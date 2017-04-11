@@ -84,3 +84,7 @@ git push -u origin master来进行推送
 origin不用说，就是前面的远程仓库，而后面的master表示本地仓库，前面提到过
 -u表示git不但会把本地的master推送到远程，同时也会在远程创建master，并且与本地的master进行关联，之后的所有需要提交的代码，都可以用
 git push origin master来简化了。
+
+
+接下来介绍一下分支
+我们往往会有这种需求，我们此时有2个人在开发，如果都是只针对master主分支进行修改，那么每次提交后，必然会影响
