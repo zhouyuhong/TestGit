@@ -118,3 +118,10 @@ git push origin --delete dev
 
 但是我们知道，在多个分支同时修改后，合并会有一定几率发生冲突，比如此时我们在dev中修改txt文件内容。然后add并commit
 然后此时我们切换到master，同样对txt文件进行修改，并add和commit
+此时我们再进行合并操作，就会发现git提示我们txt发生了冲突，需要解决
+我们打开txt文件，发现两个版本的内容都被git标记了出来，我们手动修改之后，进行add与commit，此时冲突就解决完毕了
+此时我们也可以通过git命令来查看日志记录，冲突也清晰的展示了出来
+git log --graph --pretty=oneline --abbrev-commit
+直接输入
+git log --graph
+可以只查看冲突解决的图例
