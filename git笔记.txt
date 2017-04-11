@@ -116,4 +116,5 @@ git push origin --delete dev
 来删除远程分支
 
 
+但是我们知道，在多个分支同时修改后，合并会有一定几率发生冲突，比如此时我们在dev中修改txt文件内容。然后add并commit
 然后此时我们切换到master，同样对txt文件进行修改，并add和commit
