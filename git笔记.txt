@@ -125,3 +125,7 @@ git log --graph --pretty=oneline --abbrev-commit
 直接输入
 git log --graph
 可以只查看冲突解决的图例
+
+
+接下来就介绍一下如果出现Bug，此时怎么办
+假设此时我们的master上出现了一个bug
