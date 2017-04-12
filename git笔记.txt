@@ -128,4 +128,4 @@ git log --graph
 
 
 接下来就介绍一下如果出现Bug，此时怎么办
-假设此时我们的master上出现了一个bug
+假设此时我们的master上出现了一个bug，提交
