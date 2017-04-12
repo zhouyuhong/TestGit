@@ -144,3 +144,28 @@ git stash drop
 但是这样做太麻烦了，我们有下面的一行命令来代替上面的两行
 git stash pop
 此时我们发现，果然恢复到了之前的代码
+
+
+接下来就是打标签了，有人说，commit id不也是类似于标签的功能吗，但是commit id的长度我们是知道的，与其去使用那个不知道什么意思的东西，不如自己设置一个类似版本号的东西，又好记，又方便
+git tag tagname
+例如我们可以
+git tag v1.0
+请注意，tag总是会标记最新的一次commit。我们可以用git tag来查看当前的标签号
+当然，我们也可以指定commit id来对指定版本打标签
+git tag tagname commitid
+例如我们对commit id为12345的打标签
+git tag v1.0 12345
+当然，我们也可以对标签进行删除：
+git tag -d tagname
+例如
+git tag -d v1.0
+表示删除v1.0的tag
+当然，我们也可以对标签进行Push操作
+git push origin tagname
+例如
+git push origin v1.0
+当然，我们也可以推送本地的所有tag
+git push origin --tags
+但是我们此时如果想删除远程的标签，则比较麻烦，需要在删除本地标签后，运行远程删除操作
+git push origin :refs/tags/tagname
+
